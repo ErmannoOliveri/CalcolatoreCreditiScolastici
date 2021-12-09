@@ -1,7 +1,7 @@
 /**
  * @author Oliveri - Chen
  * @date 07/12/2021
- * @description Programma per calcolare i crediti scolastici di un alunno frequentante la classe terza
+ * @description Programma per calcolare i crediti scolastici di un alunno frequentante la classe terza,quarta,quinta
  */
 
 package com.company;
@@ -31,7 +31,7 @@ public class CreditoScolastico {
     }
 
     /**
-     * Metodo che calcola i crediti scolastici di un alunno
+     * Metodo che calcola i crediti scolastici di un alunno di terza
      */
     public void calcoloCreditiTerza() {
 
@@ -83,6 +83,10 @@ public class CreditoScolastico {
             }
         }
     }
+    
+    /**
+     * Metodo che calcola i crediti scolastici di un alunno di quarta
+     */
     public void calcoloCreditiQuarta() {
 
         if (this.mediavotianno < 6) {
@@ -134,6 +138,9 @@ public class CreditoScolastico {
         }
     }
 
+    /**
+     * Metodo che calcola i crediti scolastici di un alunno di quinta
+     */
     public void calcoloCreditiQuinta(){
         if (this.mediavotianno < 6) {
             if (this.numInsuff == 0 && this.crediti >= 1) {
