@@ -42,55 +42,42 @@ public class FrameGrafica extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 String sceltaUtente = String.valueOf(sceltaClasse.getItemAt(sceltaClasse.getSelectedIndex()));
+                String insufficienze1 = insufficienze.getText();
+                String media = mediaVoti.getText();
+                String crediti1 = crediti.getText();
 
-                if (sceltaUtente.equals("Terza")){
-                    String insufficienze1 = insufficienze.getText();
-                    String media = mediaVoti.getText();
-                    String crediti1 = crediti.getText();
+                double media1 = Double.parseDouble(media);
+                int insuf = Integer.parseInt(insufficienze1);
+                int credit = Integer.parseInt(crediti1);
 
-                    double media1 = Double.parseDouble(media);
-                    int insuf = Integer.parseInt(insufficienze1);
-                    int credit = Integer.parseInt(crediti1);
-                    CreditoScolastico c1 = new CreditoScolastico(media1,insuf,credit);
-                    c1.calcoloCreditiTerza();
-                    int creditiTotali = c1.getCreditoScolastico();
-                    String risultato = String.valueOf(creditiTotali);
-                    testo1.setText("I Crediti sono: " + risultato);
+                if (media1 >= 0 && media1 <= 10){
+                    if (sceltaUtente.equals("Terza")){
+                        CreditoScolastico c1 = new CreditoScolastico(media1,insuf,credit);
+                        c1.calcoloCreditiTerza();
+                        int creditiTotali = c1.getCreditoScolastico();
+                        String risultato = String.valueOf(creditiTotali);
+                        testo1.setText("I Crediti sono: " + risultato);
+                    }
+
+                    else if (sceltaUtente.equals("Quarta")){
+                        CreditoScolastico c1 = new CreditoScolastico(media1,insuf,credit);
+                        c1.calcoloCreditiQuarta();
+                        int creditiTotali = c1.getCreditoScolastico();
+                        String risultato = String.valueOf(creditiTotali);
+                        testo1.setText("I Crediti sono: " + risultato);
+                    }
+
+                    else if (sceltaUtente.equals("Quinta")){
+                        CreditoScolastico c1 = new CreditoScolastico(media1,insuf,credit);
+                        c1.calcoloCreditiQuinta();
+                        int creditiTotali = c1.getCreditoScolastico();
+                        String risultato = String.valueOf(creditiTotali);
+                        testo1.setText("I Crediti sono: " + risultato);
+                    }
                 }
-
-                else if (sceltaUtente.equals("Quarta")){
-
-                    String insufficienze1 = insufficienze.getText();
-                    String media = mediaVoti.getText();
-                    String crediti1 = crediti.getText();
-
-                    double media1 = Double.parseDouble(media);
-                    int insuf = Integer.parseInt(insufficienze1);
-                    int credit = Integer.parseInt(crediti1);
-                    CreditoScolastico c1 = new CreditoScolastico(media1,insuf,credit);
-                    c1.calcoloCreditiQuarta();
-                    int creditiTotali = c1.getCreditoScolastico();
-                    String risultato = String.valueOf(creditiTotali);
-                    testo1.setText("I Crediti sono: " + risultato);
-
+                else{
+                    testo1.setText("Valori non Validi");
                 }
-
-                else if (sceltaUtente.equals("Quinta")){
-                    String insufficienze1 = insufficienze.getText();
-                    String media = mediaVoti.getText();
-                    String crediti1 = crediti.getText();
-
-                    double media1 = Double.parseDouble(media);
-                    int insuf = Integer.parseInt(insufficienze1);
-                    int credit = Integer.parseInt(crediti1);
-                    CreditoScolastico c1 = new CreditoScolastico(media1,insuf,credit);
-                    c1.calcoloCreditiQuinta();
-                    int creditiTotali = c1.getCreditoScolastico();
-                    String risultato = String.valueOf(creditiTotali);
-                    testo1.setText("I Crediti sono: " + risultato);
-
-                }
-
             }
         });
 
@@ -98,6 +85,10 @@ public class FrameGrafica extends JFrame{
         mediaVoti.setColumns(5);
         crediti.setColumns(5);
         setSize(250,150);
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (int) ((dimension.getWidth() - getWidth()) / 2);
+        int y = (int) ((dimension.getHeight() - getHeight()) / 2);
+        setLocation(x,y);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
