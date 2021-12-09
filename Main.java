@@ -4,10 +4,6 @@
  * @description Programma per calcolare i crediti scolastici di un alunno frequentante la classe terza,quarta,quinta
  */
 package com.company;
-import java.util.Scanner;
-import javax.swing.*;
-
-
 public class Main {
 
     public static void main(String[] args) {
