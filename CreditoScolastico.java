@@ -8,7 +8,6 @@ package com.company;
 
 public class CreditoScolastico {
     private double mediavotianno;
-    private int classe;
     private int numInsuff;
     private int crediti;
     private int creditoScolastico;
@@ -17,13 +16,11 @@ public class CreditoScolastico {
     /**
      * Metodo costruttore che riceve cognome,media,insufficienze,crediti e le salva nei relativi attributi
      * e che inizializza creditoScolastico e classe
-     * @param cognome cognome dell'alunno
      * @param media media dei voti
      * @param insufficiente numero delle materie insufficienti
      * @param crediti crediti aggiuntivi
      */
     public CreditoScolastico(double media, int insufficiente, int crediti) {
-        this.classe = 3;
         this.mediavotianno = media;
         this.crediti = crediti;
         this.creditoScolastico = 0;
