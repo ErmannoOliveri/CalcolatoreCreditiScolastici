@@ -28,22 +28,18 @@ public class CreditoScolastico {
     }
 
     /**
-     * Metodo che calcola i crediti scolastici di un alunno
+     * Metodo che calcola i crediti scolastici di un alunno di terza
      */
     public void calcoloCreditiTerza() {
 
         if (this.mediavotianno < 6) {
-            // la media minore di 6 non avrà nessun credito
             creditoScolastico = 0;
         }
 
         else if (this.mediavotianno == 6) {
-            //la media e uguale 6 calcola se avrà i crediti tra 7-8
             if (this.numInsuff == 0 && this.crediti >= 1) {
-                // non ha nessun voto insufficiente avrò un credito maggiore
                 this.creditoScolastico = 8;
             } else if (this.numInsuff >= 1 || crediti == 0) {
-                // se ha  voto insufficiente avrà un credito minore
                 this.creditoScolastico = 7;
             }
         }
@@ -80,12 +76,19 @@ public class CreditoScolastico {
             }
         }
     }
+    
+    /**
+    * Metodo che calcola i crediti di un alunno di quarta
+    */
     public void calcoloCreditiQuarta() {
         calcoloCreditiTerza();
         creditoScolastico = creditoScolastico+1;
 
     }
-
+    
+    /**
+    * Metodo che calcola i crediti di un alunno di quinta
+    */
     public void calcoloCreditiQuinta(){
         if (this.mediavotianno < 6) {
             if (this.numInsuff == 0 && this.crediti >= 1) {
